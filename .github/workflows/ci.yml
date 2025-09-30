@@ -131,7 +131,7 @@ jobs:
     
     - name: Install system dependencies
       run: |
-        brew install gtk4 gdk-pixbuf pango cairo glib gio webkit2gtk libadwaita libsecret sqlite openssl pkg-config
+        brew install gtk4 gdk-pixbuf pango cairo glib webkit2gtk libadwaita libsecret sqlite openssl pkg-config
     
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
