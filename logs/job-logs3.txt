@@ -1,0 +1,178 @@
+﻿2025-09-30T00:32:09.8867982Z Current runner version: '2.328.0'
+2025-09-30T00:32:09.8890396Z ##[group]Runner Image Provisioner
+2025-09-30T00:32:09.8891338Z Hosted Compute Agent
+2025-09-30T00:32:09.8891896Z Version: 20250912.392
+2025-09-30T00:32:09.8892560Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-09-30T00:32:09.8893314Z Build Date: 2025-09-12T15:23:14Z
+2025-09-30T00:32:09.8893880Z ##[endgroup]
+2025-09-30T00:32:09.8894480Z ##[group]Operating System
+2025-09-30T00:32:09.8895071Z Ubuntu
+2025-09-30T00:32:09.8895516Z 24.04.3
+2025-09-30T00:32:09.8896056Z LTS
+2025-09-30T00:32:09.8896522Z ##[endgroup]
+2025-09-30T00:32:09.8897015Z ##[group]Runner Image
+2025-09-30T00:32:09.8897503Z Image: ubuntu-24.04
+2025-09-30T00:32:09.8898107Z Version: 20250922.53.1
+2025-09-30T00:32:09.8899128Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250922.53/images/ubuntu/Ubuntu2404-Readme.md
+2025-09-30T00:32:09.8900963Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250922.53
+2025-09-30T00:32:09.8901961Z ##[endgroup]
+2025-09-30T00:32:09.8903122Z ##[group]GITHUB_TOKEN Permissions
+2025-09-30T00:32:09.8904887Z Contents: read
+2025-09-30T00:32:09.8905406Z Metadata: read
+2025-09-30T00:32:09.8906086Z Packages: read
+2025-09-30T00:32:09.8906590Z ##[endgroup]
+2025-09-30T00:32:09.8908528Z Secret source: Actions
+2025-09-30T00:32:09.8909359Z Prepare workflow directory
+2025-09-30T00:32:09.9298073Z Prepare all required actions
+2025-09-30T00:32:09.9334792Z Getting action download info
+2025-09-30T00:32:10.3385280Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-09-30T00:32:10.5487941Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:5d458579430fc14a04a08a1e7d3694f545e91ce6)
+2025-09-30T00:32:10.9385309Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+2025-09-30T00:32:11.9540556Z Complete job name: Test
+2025-09-30T00:32:12.0330539Z ##[group]Run actions/checkout@v4
+2025-09-30T00:32:12.0331997Z with:
+2025-09-30T00:32:12.0332757Z   repository: ilyk/mailapp
+2025-09-30T00:32:12.0333858Z   token: ***
+2025-09-30T00:32:12.0334579Z   ssh-strict: true
+2025-09-30T00:32:12.0335327Z   ssh-user: git
+2025-09-30T00:32:12.0336093Z   persist-credentials: true
+2025-09-30T00:32:12.0336936Z   clean: true
+2025-09-30T00:32:12.0337710Z   sparse-checkout-cone-mode: true
+2025-09-30T00:32:12.0338624Z   fetch-depth: 1
+2025-09-30T00:32:12.0339366Z   fetch-tags: false
+2025-09-30T00:32:12.0340138Z   show-progress: true
+2025-09-30T00:32:12.0341035Z   lfs: false
+2025-09-30T00:32:12.0341770Z   submodules: false
+2025-09-30T00:32:12.0342566Z   set-safe-directory: true
+2025-09-30T00:32:12.0343713Z env:
+2025-09-30T00:32:12.0344532Z   CARGO_TERM_COLOR: always
+2025-09-30T00:32:12.0345367Z ##[endgroup]
+2025-09-30T00:32:12.1449255Z Syncing repository: ilyk/mailapp
+2025-09-30T00:32:12.1452175Z ##[group]Getting Git version info
+2025-09-30T00:32:12.1453522Z Working directory is '/home/runner/work/mailapp/mailapp'
+2025-09-30T00:32:12.1455297Z [command]/usr/bin/git version
+2025-09-30T00:32:12.1506368Z git version 2.51.0
+2025-09-30T00:32:12.1533298Z ##[endgroup]
+2025-09-30T00:32:12.1547072Z Temporarily overriding HOME='/home/runner/work/_temp/bef2e3b6-f84e-4c0b-8e7d-aed8250f884f' before making global git config changes
+2025-09-30T00:32:12.1549856Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-30T00:32:12.1559410Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mailapp/mailapp
+2025-09-30T00:32:12.1596876Z Deleting the contents of '/home/runner/work/mailapp/mailapp'
+2025-09-30T00:32:12.1600405Z ##[group]Initializing the repository
+2025-09-30T00:32:12.1604448Z [command]/usr/bin/git init /home/runner/work/mailapp/mailapp
+2025-09-30T00:32:12.1696386Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-09-30T00:32:12.1699581Z hint: is subject to change. To configure the initial branch name to use in all
+2025-09-30T00:32:12.1702803Z hint: of your new repositories, which will suppress this warning, call:
+2025-09-30T00:32:12.1704400Z hint:
+2025-09-30T00:32:12.1705304Z hint: 	git config --global init.defaultBranch <name>
+2025-09-30T00:32:12.1706817Z hint:
+2025-09-30T00:32:12.1707986Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-09-30T00:32:12.1709697Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-09-30T00:32:12.1711446Z hint:
+2025-09-30T00:32:12.1712395Z hint: 	git branch -m <name>
+2025-09-30T00:32:12.1713242Z hint:
+2025-09-30T00:32:12.1714377Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-09-30T00:32:12.1716228Z Initialized empty Git repository in /home/runner/work/mailapp/mailapp/.git/
+2025-09-30T00:32:12.1719055Z [command]/usr/bin/git remote add origin https://github.com/ilyk/mailapp
+2025-09-30T00:32:12.1751923Z ##[endgroup]
+2025-09-30T00:32:12.1753389Z ##[group]Disabling automatic garbage collection
+2025-09-30T00:32:12.1755498Z [command]/usr/bin/git config --local gc.auto 0
+2025-09-30T00:32:12.1784726Z ##[endgroup]
+2025-09-30T00:32:12.1785991Z ##[group]Setting up auth
+2025-09-30T00:32:12.1790925Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-30T00:32:12.1822082Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-30T00:32:12.2145744Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-30T00:32:12.2177129Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-30T00:32:12.2395471Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-09-30T00:32:12.2429059Z ##[endgroup]
+2025-09-30T00:32:12.2431662Z ##[group]Fetching the repository
+2025-09-30T00:32:12.2449900Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bd08f7631db769e9bb91842e99dec9ab92237cae:refs/remotes/origin/main
+2025-09-30T00:32:12.7441872Z From https://github.com/ilyk/mailapp
+2025-09-30T00:32:12.7443976Z  * [new ref]         bd08f7631db769e9bb91842e99dec9ab92237cae -> origin/main
+2025-09-30T00:32:12.7473484Z ##[endgroup]
+2025-09-30T00:32:12.7475467Z ##[group]Determining the checkout info
+2025-09-30T00:32:12.7478407Z ##[endgroup]
+2025-09-30T00:32:12.7484459Z [command]/usr/bin/git sparse-checkout disable
+2025-09-30T00:32:12.7525391Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-09-30T00:32:12.7563279Z ##[group]Checking out the ref
+2025-09-30T00:32:12.7564009Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-09-30T00:32:12.7684363Z Switched to a new branch 'main'
+2025-09-30T00:32:12.7687289Z branch 'main' set up to track 'origin/main'.
+2025-09-30T00:32:12.7692936Z ##[endgroup]
+2025-09-30T00:32:12.7726177Z [command]/usr/bin/git log -1 --format=%H
+2025-09-30T00:32:12.7747717Z bd08f7631db769e9bb91842e99dec9ab92237cae
+2025-09-30T00:32:12.7916945Z ##[group]Run sudo apt-get update
+2025-09-30T00:32:12.7917286Z [36;1msudo apt-get update[0m
+2025-09-30T00:32:12.7918150Z [36;1msudo apt-get install -y libgtk-4-dev libgdk-pixbuf2.0-dev libpango1.0-dev libcairo-gobject-dev libglib2.0-dev libgio2.0-cil-dev libwebkit2gtk-4.0-dev libadwaita-1-dev libsecret-1-dev libsqlite3-dev libssl-dev pkg-config[0m
+2025-09-30T00:32:12.7953641Z shell: /usr/bin/bash -e {0}
+2025-09-30T00:32:12.7953890Z env:
+2025-09-30T00:32:12.7954062Z   CARGO_TERM_COLOR: always
+2025-09-30T00:32:12.7954287Z ##[endgroup]
+2025-09-30T00:32:12.8701419Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2025-09-30T00:32:12.9032815Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2025-09-30T00:32:12.9034701Z Hit:6 https://packages.microsoft.com/repos/azure-cli noble InRelease
+2025-09-30T00:32:12.9044347Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2025-09-30T00:32:12.9068255Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2025-09-30T00:32:12.9109320Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2025-09-30T00:32:12.9138364Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2025-09-30T00:32:13.1276718Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1443 kB]
+2025-09-30T00:32:13.1434988Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [282 kB]
+2025-09-30T00:32:13.1458450Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [175 kB]
+2025-09-30T00:32:13.1474909Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [15.3 kB]
+2025-09-30T00:32:13.1484865Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1485 kB]
+2025-09-30T00:32:13.1602623Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [299 kB]
+2025-09-30T00:32:13.1625456Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [378 kB]
+2025-09-30T00:32:13.1655020Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [31.1 kB]
+2025-09-30T00:32:13.1672999Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1957 kB]
+2025-09-30T00:32:13.1790084Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [441 kB]
+2025-09-30T00:32:13.2265277Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+2025-09-30T00:32:13.2267409Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+2025-09-30T00:32:13.2268861Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [40.4 kB]
+2025-09-30T00:32:13.2270354Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-backports/main Translation-en [9208 B]
+2025-09-30T00:32:13.2271692Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7160 B]
+2025-09-30T00:32:13.2280142Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [368 B]
+2025-09-30T00:32:13.2288516Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [28.9 kB]
+2025-09-30T00:32:13.2296715Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [17.5 kB]
+2025-09-30T00:32:13.2304514Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [11.0 kB]
+2025-09-30T00:32:13.2331545Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1444 B]
+2025-09-30T00:32:13.2341574Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+2025-09-30T00:32:13.2348382Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+2025-09-30T00:32:13.2358968Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1171 kB]
+2025-09-30T00:32:13.2426326Z Get:31 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [198 kB]
+2025-09-30T00:32:13.2838954Z Get:42 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [39.7 kB]
+2025-09-30T00:32:13.2875044Z Get:43 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [57.3 kB]
+2025-09-30T00:32:13.2880642Z Get:32 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [21.6 kB]
+2025-09-30T00:32:13.2888646Z Get:33 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [8744 B]
+2025-09-30T00:32:13.2896496Z Get:34 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [880 kB]
+2025-09-30T00:32:13.2941441Z Get:35 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [195 kB]
+2025-09-30T00:32:13.2957272Z Get:36 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.2 kB]
+2025-09-30T00:32:13.2969168Z Get:37 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [18.0 kB]
+2025-09-30T00:32:13.2977285Z Get:38 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1872 kB]
+2025-09-30T00:32:13.3111847Z Get:39 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [423 kB]
+2025-09-30T00:32:13.3136673Z Get:40 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+2025-09-30T00:32:13.3143958Z Get:41 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]
+2025-09-30T00:32:21.6213522Z Fetched 11.9 MB in 1s (8088 kB/s)
+2025-09-30T00:32:22.3227824Z Reading package lists...
+2025-09-30T00:32:22.3548163Z Reading package lists...
+2025-09-30T00:32:22.5180409Z Building dependency tree...
+2025-09-30T00:32:22.5187678Z Reading state information...
+2025-09-30T00:32:22.7275188Z E: Unable to locate package libcairo-gobject-dev
+2025-09-30T00:32:22.7275730Z E: Unable to locate package libgio2.0-cil-dev
+2025-09-30T00:32:22.7276584Z E: Couldn't find any package by glob 'libgio2.0-cil-dev'
+2025-09-30T00:32:22.7277365Z E: Couldn't find any package by regex 'libgio2.0-cil-dev'
+2025-09-30T00:32:22.7277902Z E: Unable to locate package libwebkit2gtk-4.0-dev
+2025-09-30T00:32:22.7278377Z E: Couldn't find any package by glob 'libwebkit2gtk-4.0-dev'
+2025-09-30T00:32:22.7278876Z E: Couldn't find any package by regex 'libwebkit2gtk-4.0-dev'
+2025-09-30T00:32:22.7306664Z ##[error]Process completed with exit code 100.
+2025-09-30T00:32:22.7476342Z Post job cleanup.
+2025-09-30T00:32:22.8414321Z [command]/usr/bin/git version
+2025-09-30T00:32:22.8449666Z git version 2.51.0
+2025-09-30T00:32:22.8491738Z Temporarily overriding HOME='/home/runner/work/_temp/a95f6338-16be-4d71-9002-c920db2bafaf' before making global git config changes
+2025-09-30T00:32:22.8492861Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-30T00:32:22.8496757Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mailapp/mailapp
+2025-09-30T00:32:22.8531641Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-30T00:32:22.8563230Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-30T00:32:22.8789512Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-30T00:32:22.8809673Z http.https://github.com/.extraheader
+2025-09-30T00:32:22.8822177Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-09-30T00:32:22.8851729Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-30T00:32:22.9174342Z Cleaning up orphan processes

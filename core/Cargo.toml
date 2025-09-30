@@ -24,7 +24,8 @@ oauth2.workspace = true
 async-imap.workspace = true
 lettre.workspace = true
 mailparse.workspace = true
-addr.workspace = true
+# addr.workspace = true  # Replaced with email_address
+email_address.workspace = true
 mime.workspace = true
 rustls.workspace = true
 rustls-pemfile.workspace = true
@@ -34,7 +35,8 @@ rusqlite.workspace = true
 sha2.workspace = true
 directories.workspace = true
 keyring.workspace = true
-sodiumoxide.workspace = true
+# sodiumoxide.workspace = true  # Replaced with libsodium-sys
+libsodium-sys.workspace = true
 time = { workspace = true, features = ["serde"] }
 uuid = { workspace = true, features = ["serde"] }
 regex.workspace = true

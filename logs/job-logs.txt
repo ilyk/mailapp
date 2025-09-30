@@ -1,0 +1,128 @@
+﻿2025-09-30T00:32:09.0570370Z Current runner version: '2.328.0'
+2025-09-30T00:32:09.0585980Z ##[group]Runner Image Provisioner
+2025-09-30T00:32:09.0586450Z Hosted Compute Agent
+2025-09-30T00:32:09.0586780Z Version: 20250912.392
+2025-09-30T00:32:09.0587170Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-09-30T00:32:09.0587600Z Build Date: 2025-09-12T15:23:14Z
+2025-09-30T00:32:09.0587970Z ##[endgroup]
+2025-09-30T00:32:09.0588290Z ##[group]Operating System
+2025-09-30T00:32:09.0588630Z macOS
+2025-09-30T00:32:09.0588920Z 15.6.1
+2025-09-30T00:32:09.0589210Z 24G90
+2025-09-30T00:32:09.0589480Z ##[endgroup]
+2025-09-30T00:32:09.0589780Z ##[group]Runner Image
+2025-09-30T00:32:09.0590100Z Image: macos-15-arm64
+2025-09-30T00:32:09.0590410Z Version: 20250922.2357
+2025-09-30T00:32:09.0591110Z Included Software: https://github.com/actions/runner-images/blob/macos-15-arm64/20250922.2357/images/macos/macos-15-arm64-Readme.md
+2025-09-30T00:32:09.0592130Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-15-arm64%2F20250922.2357
+2025-09-30T00:32:09.0592730Z ##[endgroup]
+2025-09-30T00:32:09.0593400Z ##[group]GITHUB_TOKEN Permissions
+2025-09-30T00:32:09.0594410Z Contents: read
+2025-09-30T00:32:09.0594710Z Metadata: read
+2025-09-30T00:32:09.0595010Z Packages: read
+2025-09-30T00:32:09.0595330Z ##[endgroup]
+2025-09-30T00:32:09.0596680Z Secret source: Actions
+2025-09-30T00:32:09.0597080Z Prepare workflow directory
+2025-09-30T00:32:09.1072950Z Prepare all required actions
+2025-09-30T00:32:09.1102100Z Getting action download info
+2025-09-30T00:32:09.5023880Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-09-30T00:32:09.8733730Z Download action repository 'dtolnay/rust-toolchain@stable' (SHA:5d458579430fc14a04a08a1e7d3694f545e91ce6)
+2025-09-30T00:32:10.6081220Z Download action repository 'actions/cache@v4' (SHA:0057852bfaa89a56745cba8c7296529d2fc39830)
+2025-09-30T00:32:11.7284910Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-09-30T00:32:11.9635470Z Complete job name: Build macOS
+2025-09-30T00:32:12.0105880Z ##[group]Run actions/checkout@v4
+2025-09-30T00:32:12.0106700Z with:
+2025-09-30T00:32:12.0107190Z   repository: ilyk/mailapp
+2025-09-30T00:32:12.0108050Z   token: ***
+2025-09-30T00:32:12.0108520Z   ssh-strict: true
+2025-09-30T00:32:12.0109020Z   ssh-user: git
+2025-09-30T00:32:12.0109530Z   persist-credentials: true
+2025-09-30T00:32:12.0110100Z   clean: true
+2025-09-30T00:32:12.0110610Z   sparse-checkout-cone-mode: true
+2025-09-30T00:32:12.0111240Z   fetch-depth: 1
+2025-09-30T00:32:12.0111740Z   fetch-tags: false
+2025-09-30T00:32:12.0112260Z   show-progress: true
+2025-09-30T00:32:12.0112770Z   lfs: false
+2025-09-30T00:32:12.0113240Z   submodules: false
+2025-09-30T00:32:12.0113750Z   set-safe-directory: true
+2025-09-30T00:32:12.0114420Z env:
+2025-09-30T00:32:12.0114880Z   CARGO_TERM_COLOR: always
+2025-09-30T00:32:12.0115440Z ##[endgroup]
+2025-09-30T00:32:12.4414220Z Syncing repository: ilyk/mailapp
+2025-09-30T00:32:12.4415890Z ##[group]Getting Git version info
+2025-09-30T00:32:12.4416850Z Working directory is '/Users/runner/work/mailapp/mailapp'
+2025-09-30T00:32:12.4418090Z [command]/opt/homebrew/bin/git version
+2025-09-30T00:32:12.4843740Z git version 2.50.1
+2025-09-30T00:32:12.4943250Z ##[endgroup]
+2025-09-30T00:32:12.4949910Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/f6633980-3a73-4faf-8621-d5a87e5e0dc8/.gitconfig'
+2025-09-30T00:32:12.4952150Z Temporarily overriding HOME='/Users/runner/work/_temp/f6633980-3a73-4faf-8621-d5a87e5e0dc8' before making global git config changes
+2025-09-30T00:32:12.4954120Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-30T00:32:12.4955750Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/mailapp/mailapp
+2025-09-30T00:32:12.5025020Z Deleting the contents of '/Users/runner/work/mailapp/mailapp'
+2025-09-30T00:32:12.5027720Z ##[group]Initializing the repository
+2025-09-30T00:32:12.5032480Z [command]/opt/homebrew/bin/git init /Users/runner/work/mailapp/mailapp
+2025-09-30T00:32:12.5275200Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-09-30T00:32:12.5288190Z hint: is subject to change. To configure the initial branch name to use in all
+2025-09-30T00:32:12.5297920Z hint: of your new repositories, which will suppress this warning, call:
+2025-09-30T00:32:12.5299090Z hint:
+2025-09-30T00:32:12.5300100Z hint: 	git config --global init.defaultBranch <name>
+2025-09-30T00:32:12.5300960Z hint:
+2025-09-30T00:32:12.5301810Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-09-30T00:32:12.5303340Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-09-30T00:32:12.5304360Z hint:
+2025-09-30T00:32:12.5305250Z hint: 	git branch -m <name>
+2025-09-30T00:32:12.5305920Z hint:
+2025-09-30T00:32:12.5306820Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-09-30T00:32:12.5308650Z Initialized empty Git repository in /Users/runner/work/mailapp/mailapp/.git/
+2025-09-30T00:32:12.5313640Z [command]/opt/homebrew/bin/git remote add origin https://github.com/ilyk/mailapp
+2025-09-30T00:32:12.5470550Z ##[endgroup]
+2025-09-30T00:32:12.5471680Z ##[group]Disabling automatic garbage collection
+2025-09-30T00:32:12.5477130Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2025-09-30T00:32:12.5507670Z ##[endgroup]
+2025-09-30T00:32:12.5510170Z ##[group]Setting up auth
+2025-09-30T00:32:12.5511620Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-30T00:32:12.5585860Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-30T00:32:12.6814100Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-30T00:32:12.6872440Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-30T00:32:12.7577520Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-09-30T00:32:12.7641580Z ##[endgroup]
+2025-09-30T00:32:12.7642690Z ##[group]Fetching the repository
+2025-09-30T00:32:12.7652020Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bd08f7631db769e9bb91842e99dec9ab92237cae:refs/remotes/origin/main
+2025-09-30T00:32:13.4375490Z From https://github.com/ilyk/mailapp
+2025-09-30T00:32:13.4376280Z  * [new ref]         bd08f7631db769e9bb91842e99dec9ab92237cae -> origin/main
+2025-09-30T00:32:13.4449810Z ##[endgroup]
+2025-09-30T00:32:13.4450120Z ##[group]Determining the checkout info
+2025-09-30T00:32:13.4450410Z ##[endgroup]
+2025-09-30T00:32:13.4453560Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2025-09-30T00:32:13.4531320Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2025-09-30T00:32:13.4600320Z ##[group]Checking out the ref
+2025-09-30T00:32:13.4603430Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-09-30T00:32:13.4834050Z Switched to a new branch 'main'
+2025-09-30T00:32:13.4857990Z branch 'main' set up to track 'origin/main'.
+2025-09-30T00:32:13.4858960Z ##[endgroup]
+2025-09-30T00:32:13.4934610Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2025-09-30T00:32:13.4997260Z bd08f7631db769e9bb91842e99dec9ab92237cae
+2025-09-30T00:32:13.5139150Z ##[group]Run brew install gtk4 gdk-pixbuf pango cairo glib gio-2.0 webkit2gtk libadwaita libsecret sqlite openssl pkg-config
+2025-09-30T00:32:13.5139870Z [36;1mbrew install gtk4 gdk-pixbuf pango cairo glib gio-2.0 webkit2gtk libadwaita libsecret sqlite openssl pkg-config[0m
+2025-09-30T00:32:13.5182960Z shell: /bin/bash -e {0}
+2025-09-30T00:32:13.5183460Z env:
+2025-09-30T00:32:13.5183590Z   CARGO_TERM_COLOR: always
+2025-09-30T00:32:13.5183770Z ##[endgroup]
+2025-09-30T00:32:17.0853370Z ##[warning]No available formula with the name "gio-2.0".
+2025-09-30T00:32:17.1378720Z [34m==>[0m [1mSearching for similarly named formulae and casks...[0m
+2025-09-30T00:32:17.2304740Z ##[error]No formulae or casks found for gio-2.0.
+2025-09-30T00:32:17.2464690Z ##[error]Process completed with exit code 1.
+2025-09-30T00:32:17.2572540Z Post job cleanup.
+2025-09-30T00:32:17.3526980Z [command]/opt/homebrew/bin/git version
+2025-09-30T00:32:17.3578240Z git version 2.50.1
+2025-09-30T00:32:17.3598430Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/d94c4a7a-dada-4834-8cb8-77e011e50c89/.gitconfig'
+2025-09-30T00:32:17.3605060Z Temporarily overriding HOME='/Users/runner/work/_temp/d94c4a7a-dada-4834-8cb8-77e011e50c89' before making global git config changes
+2025-09-30T00:32:17.3605730Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-30T00:32:17.3612490Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/mailapp/mailapp
+2025-09-30T00:32:17.3674350Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-30T00:32:17.3721650Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-30T00:32:17.4281800Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-30T00:32:17.4320060Z http.https://github.com/.extraheader
+2025-09-30T00:32:17.4326840Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-09-30T00:32:17.4373630Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-30T00:32:17.5016400Z Cleaning up orphan processes

@@ -12,14 +12,14 @@ name = "pid_query"
 path = "examples/pid_query.rs"
 
 [dependencies]
-gtk4 = { version = "0.7", features = ["v4_8"] }
-libadwaita = { version = "0.5", features = ["v1_2"] }
+gtk4 = { version = "0.10", features = ["v4_8"] }
+libadwaita = { version = "0.8", features = ["v1_2"] }
 email-backend = { path = "../email-backend" }
 uuid = { version = "1.0", features = ["v4"] }
 time = { version = "0.3", features = ["formatting"] }
 regex = "1.10"
-glib = { version = "0.18", features = ["v2_74"] }
-gio = { version = "0.18", features = ["v2_74"] }
+glib = { version = "0.21", features = ["v2_74"] }
+gio = { version = "0.21", features = ["v2_74"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 dirs = "5.0"

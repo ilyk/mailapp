@@ -19,13 +19,13 @@ jobs:
     - name: Install system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libgtk-4-dev libgdk-pixbuf2.0-dev libpango1.0-dev libcairo-gobject-dev libglib2.0-dev libgio2.0-cil-dev libwebkit2gtk-4.0-dev libadwaita-1-dev libsecret-1-dev libsqlite3-dev libssl-dev pkg-config
+        sudo apt-get install -y libgtk-4-dev libgdk-pixbuf2.0-dev libpango1.0-dev libcairo2-dev libglib2.0-dev libwebkit2gtk-4.1-dev libadwaita-1-dev libsecret-1-dev libsqlite3-dev libssl-dev pkg-config
     
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
     
     - name: Build release
-      run: cargo build --release --verbose --all
+      run: cargo build --release --verbose --workspace
     
     - name: Create AppImage
       run: |
@@ -53,7 +53,7 @@ jobs:
       uses: dtolnay/rust-toolchain@stable
     
     - name: Build release
-      run: cargo build --release --verbose --all
+      run: cargo build --release --verbose --workspace
     
     - name: Upload release assets
       uses: actions/upload-release-asset@v1
@@ -74,13 +74,13 @@ jobs:
     
     - name: Install system dependencies
       run: |
-        brew install gtk4 gdk-pixbuf pango cairo glib gio-2.0 webkit2gtk libadwaita libsecret sqlite openssl pkg-config
+        brew install gtk4 gdk-pixbuf pango cairo glib gio webkit2gtk libadwaita libsecret sqlite openssl pkg-config
     
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
     
     - name: Build release
-      run: cargo build --release --verbose --all
+      run: cargo build --release --verbose --workspace
     
     - name: Upload release assets
       uses: actions/upload-release-asset@v1

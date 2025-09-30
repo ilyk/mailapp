@@ -20,7 +20,7 @@ jobs:
     - name: Install system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libgtk-4-dev libgdk-pixbuf2.0-dev libpango1.0-dev libcairo-gobject-dev libglib2.0-dev libgio2.0-cil-dev libwebkit2gtk-4.0-dev libadwaita-1-dev libsecret-1-dev libsqlite3-dev libssl-dev pkg-config
+        sudo apt-get install -y libgtk-4-dev libgdk-pixbuf2.0-dev libpango1.0-dev libcairo2-dev libglib2.0-dev libwebkit2gtk-4.1-dev libadwaita-1-dev libsecret-1-dev libsqlite3-dev libssl-dev pkg-config
     
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
@@ -39,16 +39,16 @@ jobs:
           ${{ runner.os }}-cargo-
     
     - name: Check formatting
-      run: cargo fmt --all -- --check
+      run: cargo fmt --workspace -- --check
     
     - name: Run clippy
-      run: cargo clippy --all-targets --all-features -- -D warnings
+      run: cargo clippy --workspace --all-targets --all-features -- -D warnings
     
     - name: Build
-      run: cargo build --verbose --all
+      run: cargo build --verbose --workspace
     
     - name: Run tests
-      run: cargo test --verbose --all
+      run: cargo test --verbose --workspace
       env:
         RUST_BACKTRACE: 1
 
@@ -62,7 +62,7 @@ jobs:
     - name: Install system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libgtk-4-dev libgdk-pixbuf2.0-dev libpango1.0-dev libcairo-gobject-dev libglib2.0-dev libgio2.0-cil-dev libwebkit2gtk-4.0-dev libadwaita-1-dev libsecret-1-dev libsqlite3-dev libssl-dev pkg-config
+        sudo apt-get install -y libgtk-4-dev libgdk-pixbuf2.0-dev libpango1.0-dev libcairo2-dev libglib2.0-dev libwebkit2gtk-4.1-dev libadwaita-1-dev libsecret-1-dev libsqlite3-dev libssl-dev pkg-config
     
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
@@ -79,7 +79,7 @@ jobs:
           ${{ runner.os }}-cargo-
     
     - name: Build release
-      run: cargo build --release --verbose --all
+      run: cargo build --release --verbose --workspace
     
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
@@ -110,7 +110,7 @@ jobs:
           ${{ runner.os }}-cargo-
     
     - name: Build release
-      run: cargo build --release --verbose --all
+      run: cargo build --release --verbose --workspace
       env:
         # Windows-specific environment variables for GTK
         GTK_INSTALL_PATH: "C:\\msys64\\mingw64"
@@ -131,7 +131,7 @@ jobs:
     
     - name: Install system dependencies
       run: |
-        brew install gtk4 gdk-pixbuf pango cairo glib gio-2.0 webkit2gtk libadwaita libsecret sqlite openssl pkg-config
+        brew install gtk4 gdk-pixbuf pango cairo glib gio webkit2gtk libadwaita libsecret sqlite openssl pkg-config
     
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
@@ -148,7 +148,7 @@ jobs:
           ${{ runner.os }}-cargo-
     
     - name: Build release
-      run: cargo build --release --verbose --all
+      run: cargo build --release --verbose --workspace
       env:
         PKG_CONFIG_PATH: "/opt/homebrew/lib/pkgconfig"
     
