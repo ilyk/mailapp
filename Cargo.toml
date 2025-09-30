@@ -18,7 +18,7 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Asgard Mail Team"]
 license = "MIT"
-repository = "https://github.com/asgard/asgard-mail"
+repository = "https://github.com/ilyk/mailapp"
 description = "Asgard Mail - A modern email client for GNOME with Gmail OAuth support"
 
 [workspace.dependencies]
