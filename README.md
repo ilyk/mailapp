@@ -1,5 +1,12 @@
 # Asgard Mail
 
+[![CI](https://github.com/asgard/asgard-mail/workflows/CI/badge.svg)](https://github.com/asgard/asgard-mail/actions)
+[![Build Status](https://github.com/asgard/asgard-mail/workflows/CI/badge.svg?branch=main)](https://github.com/asgard/asgard-mail/actions)
+[![Security Audit](https://github.com/asgard/asgard-mail/workflows/CI/badge.svg?event=push)](https://github.com/asgard/asgard-mail/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Rust](https://img.shields.io/badge/rust-1.70%2B-orange.svg)](https://www.rust-lang.org)
+[![GTK](https://img.shields.io/badge/GTK-4.0-blue.svg)](https://www.gtk.org)
+
 A modern, production-ready email client for GNOME 43+ written in Rust. Asgard Mail provides a clean, Apple Mail-inspired interface with full Gmail OAuth support and traditional IMAP/SMTP/POP3 compatibility.
 
 ## Features

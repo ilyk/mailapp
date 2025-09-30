@@ -1,0 +1,93 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  release-linux:
+    name: Release Linux
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libgtk-4-dev libgdk-pixbuf2.0-dev libpango1.0-dev libcairo-gobject-dev libglib2.0-dev libgio2.0-cil-dev libwebkit2gtk-4.0-dev libadwaita-1-dev libsecret-1-dev libsqlite3-dev libssl-dev pkg-config
+    
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+    
+    - name: Build release
+      run: cargo build --release --verbose --all
+    
+    - name: Create AppImage
+      run: |
+        # This would require additional setup for AppImage creation
+        echo "AppImage creation would go here"
+    
+    - name: Upload release assets
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.upload_url }}
+        asset_path: target/release/asgard-mail
+        asset_name: asgard-mail-linux
+        asset_content_type: application/octet-stream
+
+  release-windows:
+    name: Release Windows
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+    
+    - name: Build release
+      run: cargo build --release --verbose --all
+    
+    - name: Upload release assets
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.upload_url }}
+        asset_path: target/release/asgard-mail.exe
+        asset_name: asgard-mail-windows.exe
+        asset_content_type: application/octet-stream
+
+  release-macos:
+    name: Release macOS
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install system dependencies
+      run: |
+        brew install gtk4 gdk-pixbuf pango cairo glib gio-2.0 webkit2gtk libadwaita libsecret sqlite openssl pkg-config
+    
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+    
+    - name: Build release
+      run: cargo build --release --verbose --all
+    
+    - name: Upload release assets
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.upload_url }}
+        asset_path: target/release/asgard-mail
+        asset_name: asgard-mail-macos
+        asset_content_type: application/octet-stream
