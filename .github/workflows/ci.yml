@@ -95,6 +95,17 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
+    - name: Install MSYS2 and GTK dependencies
+      run: |
+        # Install MSYS2
+        choco install msys2 -y
+        
+        # Add MSYS2 to PATH
+        $env:PATH = "C:\msys64\mingw64\bin;C:\msys64\usr\bin;$env:PATH"
+        
+        # Install GTK development libraries
+        C:\msys64\usr\bin\bash.exe -lc "pacman -S --noconfirm mingw-w64-x86_64-gtk4 mingw-w64-x86_64-glib2 mingw-w64-x86_64-pkg-config mingw-w64-x86_64-cairo mingw-w64-x86_64-pango mingw-w64-x86_64-gdk-pixbuf2 mingw-w64-x86_64-libadwaita mingw-w64-x86_64-libsecret mingw-w64-x86_64-sqlite3 mingw-w64-x86_64-openssl"
+    
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
     
@@ -113,7 +124,8 @@ jobs:
       run: cargo build --release --verbose --workspace
       env:
         # Windows-specific environment variables for GTK
-        GTK_INSTALL_PATH: "C:\\msys64\\mingw64"
+        PKG_CONFIG_PATH: "C:\msys64\mingw64\lib\pkgconfig"
+        PATH: "C:\msys64\mingw64\bin;C:\msys64\usr\bin;$env:PATH"
     
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
@@ -131,7 +143,7 @@ jobs:
     
     - name: Install system dependencies
       run: |
-        brew install gtk4 gdk-pixbuf pango cairo glib webkit2gtk libadwaita libsecret sqlite openssl pkg-config
+        brew install gtk4 gdk-pixbuf pango cairo glib webkitgtk libadwaita libsecret sqlite openssl pkg-config
     
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
