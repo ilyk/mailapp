@@ -1,0 +1,36 @@
+{
+  "app-id": DBUS_INTERFACE_NAME,
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "23.08",
+  "sdk": "org.freedesktop.Sdk",
+  "command": "asgard-mail",
+  "finish-args": [
+    "--share=ipc",
+    "--socket=wayland",
+    "--socket=x11",
+    "--socket=fallback-x11",
+    "--device=dri",
+    "--share=network",
+    "--talk-name=org.freedesktop.Notifications",
+    "--talk-name=org.freedesktop.secrets",
+    "--filesystem=home",
+    "--filesystem=xdg-config",
+    "--filesystem=xdg-cache",
+    "--filesystem=xdg-data"
+  ],
+  "modules": [
+    {
+      "name": "asgard-mail",
+      "buildsystem": "cargo",
+      "build-commands": [
+        "cargo build --release --manifest-path Cargo.toml"
+      ],
+      "sources": [
+        {
+          "type": "dir",
+          "path": "."
+        }
+      ]
+    }
+  ]
+}

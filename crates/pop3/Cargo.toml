@@ -1,0 +1,21 @@
+[package]
+name = "asgard-pop3"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Minimal async POP3 client for Asgard Mail"
+
+[dependencies]
+# Workspace dependencies
+tokio.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+native-tls.workspace = true
+
+# Additional dependencies
+tokio-util = { version = "0.7", features = ["codec"] }
+tokio-native-tls = "0.3"
+bytes = "1.5"

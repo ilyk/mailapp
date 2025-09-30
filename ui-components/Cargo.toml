@@ -1,0 +1,17 @@
+[package]
+name = "asgard-ui-components"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Reusable UI components for Asgard Mail"
+
+[dependencies]
+# Workspace dependencies
+gtk4.workspace = true
+libadwaita.workspace = true
+
+
+# Core dependency
+asgard-core = { path = "../core" }

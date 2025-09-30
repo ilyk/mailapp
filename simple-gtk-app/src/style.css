@@ -1,0 +1,38 @@
+/* Hide paned handles in header */
+.header-paned.no-handle separator {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    min-width: 0px;
+    min-height: 0px;
+    opacity: 0;
+    box-shadow: none;
+    outline: none;
+}
+
+.header-paned.no-handle separator:backdrop {
+    background: transparent;
+    border: none;
+    opacity: 0;
+}
+
+/* More aggressive approach */
+.header-paned.no-handle separator,
+.header-paned.no-handle > separator {
+    background-image: none;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    opacity: 0;
+    min-width: 0px;
+    min-height: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hide the resize cursor */
+.header-paned.no-handle {
+    cursor: default;
+}

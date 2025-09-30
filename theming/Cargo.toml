@@ -1,0 +1,13 @@
+[package]
+name = "asgard-theming"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Theming and styling for Asgard Mail"
+
+[dependencies]
+# Workspace dependencies
+gtk4.workspace = true
+libadwaita.workspace = true

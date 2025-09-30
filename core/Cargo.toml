@@ -1,0 +1,59 @@
+[package]
+name = "asgard-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Core business logic for Asgard Mail"
+
+[dependencies]
+# Workspace dependencies
+tokio.workspace = true
+futures.workspace = true
+tokio-stream.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+toml.workspace = true
+reqwest.workspace = true
+url.workspace = true
+oauth2.workspace = true
+async-imap.workspace = true
+lettre.workspace = true
+mailparse.workspace = true
+addr.workspace = true
+mime.workspace = true
+rustls.workspace = true
+rustls-pemfile.workspace = true
+native-tls.workspace = true
+rusqlite.workspace = true
+# tantivy.workspace = true  # Temporarily disabled due to zstd-safe conflicts
+sha2.workspace = true
+directories.workspace = true
+keyring.workspace = true
+sodiumoxide.workspace = true
+time = { workspace = true, features = ["serde"] }
+uuid = { workspace = true, features = ["serde"] }
+regex.workspace = true
+base64.workspace = true
+hex.workspace = true
+
+# Additional dependencies
+chrono = { version = "0.4", features = ["serde"] }
+indexmap = { version = "2.0", features = ["serde"] }
+dashmap = "5.5"
+parking_lot = "0.12"
+async-trait = "0.1"
+bytes = "1.5"
+tokio-util = { version = "0.7", features = ["codec"] }
+tokio-serde = "0.8"
+tokio-sync = "0.1"
+# zstd dependency removed to avoid version conflicts
+
+[dev-dependencies]
+tempfile.workspace = true
+mockall.workspace = true
+tokio-test = "0.4"

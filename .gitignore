@@ -1,0 +1,53 @@
+# Rust build artifacts
+target/
+Cargo.lock
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Debug files
+debug_output*.txt
+
+# Backup files
+*.bak
+*.backup
+
+# Environment files
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.temp
+
+# Log files
+*.log
+
+# Coverage reports
+tarpaulin-report.html
+lcov.info
+
+# Build scripts output
+build.log
+
+# Development status files
+*STATUS*.md
+*PROGRESS*.md
+*SUCCESS*.md
+*CLIENT*.md
+*SOLUTION*.md
+
+# Redundant build scripts
+build-no-webkit.sh
+minimal-build.sh
+simple-build.sh
+working-build.sh
+working-minimal.sh

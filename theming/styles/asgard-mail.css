@@ -1,0 +1,123 @@
+/* Asgard Mail CSS Theme */
+
+/* Main window styling */
+window {
+    background-color: @window_bg_color;
+}
+
+/* Mailbox tree styling */
+.mailbox-tree {
+    background-color: @sidebar_bg_color;
+    border-right: 1px solid @borders;
+}
+
+.mailbox-tree row {
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin: 2px 4px;
+}
+
+.mailbox-tree row:selected {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+.mailbox-tree row:hover {
+    background-color: @hover_bg_color;
+}
+
+/* Message list styling */
+.message-list {
+    background-color: @window_bg_color;
+}
+
+.message-list row {
+    padding: 8px 12px;
+    border-bottom: 1px solid @borders;
+}
+
+.message-list row:selected {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+.message-list row:hover {
+    background-color: @hover_bg_color;
+}
+
+/* Message view styling */
+.message-view {
+    background-color: @window_bg_color;
+    padding: 12px;
+}
+
+/* Search bar styling */
+.search-bar {
+    background-color: @headerbar_bg_color;
+    border-bottom: 1px solid @borders;
+    padding: 8px 12px;
+}
+
+/* Status bar styling */
+.status-bar {
+    background-color: @headerbar_bg_color;
+    border-top: 1px solid @borders;
+    padding: 4px 12px;
+}
+
+/* Button styling */
+button.suggested-action {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+button.suggested-action:hover {
+    background-color: @accent_bg_color;
+    opacity: 0.8;
+}
+
+/* Compose window styling */
+.compose-window {
+    background-color: @window_bg_color;
+}
+
+.compose-window entry {
+    margin: 4px 0;
+}
+
+.compose-window textview {
+    margin: 8px 0;
+}
+
+/* Preferences window styling */
+.preferences-window {
+    background-color: @window_bg_color;
+}
+
+.preferences-window notebook {
+    margin: 12px;
+}
+
+/* Account wizard styling */
+.account-wizard {
+    background-color: @window_bg_color;
+}
+
+.account-wizard entry {
+    margin: 4px 0;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .mailbox-tree {
+        background-color: @dark_sidebar_bg_color;
+    }
+    
+    .message-list {
+        background-color: @dark_window_bg_color;
+    }
+    
+    .message-view {
+        background-color: @dark_window_bg_color;
+    }
+}

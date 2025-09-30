@@ -1,0 +1,101 @@
+[workspace]
+members = [
+    "app",
+    "core",
+    "oauth",
+    "ui-components",
+    "theming",
+    "crates/pop3",
+    "minimal-core",
+    "minimal-app",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Asgard Mail Team"]
+description = "A modern, secure email client for GNOME"
+license = "MIT"
+repository = "https://github.com/asgard/mail"
+keywords = ["email", "mail", "gtk4", "gnome", "imap", "smtp"]
+categories = ["network-programming", "web-programming"]
+
+# Common dependencies
+[workspace.dependencies]
+# Core
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+thiserror = "1.0"
+
+# GTK4 and libadwaita
+gtk4 = { version = "0.7", features = ["v4_8"] }
+libadwaita = { version = "0.5", features = ["v1_2"] }
+
+# Email protocols
+async-imap = "0.9"
+lettre = { version = "0.11", features = ["tokio1-native-tls"] }
+native-tls = "0.2"
+rustls = "0.21"
+oauth2 = "4.4"
+mailparse = "0.14"
+addr = "0.4"
+mime = "0.3"
+
+# Storage and search
+rusqlite = { version = "0.31", features = ["bundled"] }
+tantivy = "0.21"
+sha2 = "0.10"
+
+# Crypto and security
+keyring = "2.3"
+sodiumoxide = "0.2"
+rustls-pemfile = "1.0"
+time = { version = "0.3", features = ["formatting", "serde"] }
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# Networking
+reqwest = { version = "0.11", features = ["json", "rustls-tls"] }
+url = "2.4"
+bytes = "1.0"
+
+# Async utilities
+futures = "0.3"
+tokio-stream = "0.1"
+tokio-sync = "0.1"
+tokio-util = "0.7"
+async-trait = "0.1"
+
+# Data structures
+indexmap = "2.0"
+dashmap = "5.5"
+parking-lot = "0.12"
+
+# Configuration and paths
+directories = "5.0"
+config = "0.14"
+
+# Logging and tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Serialization
+tokio-serde = "0.8"
+
+# Utilities
+regex = "1.10"
+base64 = "0.21"
+hex = "0.4"
+
+# Development
+tempfile = "3.8"
+mockall = "0.12"
+
+# Development profiles
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3

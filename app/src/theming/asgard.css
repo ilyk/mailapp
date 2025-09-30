@@ -1,0 +1,355 @@
+/* Asgard Mail - Apple Mail-inspired styling with libadwaita tokens */
+
+/* Ensure opaque surfaces across the app */
+window, .window, .background, .view, .viewer, .content, .pane, .sidebar, .message-list, .message-view {
+    background-color: @window_bg_color;
+}
+
+/* Header Bar */
+headerbar {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Hide any separators used as spacers in the header */
+headerbar separator {
+    background: transparent;
+    border: 0;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Make header Paned handles invisible and non-draggable */
+.header-paned > separator {
+    background: transparent;
+    border: 0;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+headerbar button.flat {
+    border-radius: 6px;
+    padding: 6px;
+    margin: 2px;
+}
+
+headerbar button.flat:hover {
+    background-color: alpha(@window_fg_color, 0.1);
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: @window_bg_color;
+    border-right: 1px solid alpha(@window_fg_color, 0.1);
+}
+
+.sidebar-section {
+    padding: 8px 0;
+}
+
+.sidebar-section-title {
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: alpha(@window_fg_color, 0.6);
+    padding: 8px 16px 4px;
+    margin: 0;
+}
+
+.sidebar-item {
+    padding: 8px 16px;
+    margin: 1px 8px;
+    border-radius: 6px;
+    transition: background-color 150ms ease;
+}
+
+.sidebar-item:hover {
+    background-color: alpha(@window_fg_color, 0.08);
+}
+
+.sidebar-item:selected {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+.sidebar-item:selected:hover {
+    background-color: alpha(@accent_bg_color, 0.8);
+}
+
+.sidebar-item-icon {
+    margin-right: 12px;
+    opacity: 0.7;
+}
+
+.sidebar-item:selected .sidebar-item-icon {
+    opacity: 1;
+}
+
+/* Message List */
+.message-list {
+    background-color: @window_bg_color;
+}
+
+.message-row {
+    padding: 12px 16px;
+    border-bottom: 1px solid alpha(@window_fg_color, 0.1);
+    transition: background-color 150ms ease;
+}
+
+.message-row:hover {
+    background-color: alpha(@window_fg_color, 0.05);
+}
+
+.message-row:selected {
+    background-color: alpha(@accent_bg_color, 0.2);
+}
+
+.message-row.unread {
+    font-weight: 600;
+}
+
+.message-sender {
+    font-size: 14px;
+    font-weight: 500;
+    color: @window_fg_color;
+    margin-bottom: 4px;
+}
+
+.message-subject {
+    font-size: 13px;
+    color: @window_fg_color;
+    margin-bottom: 4px;
+}
+
+.message-preview {
+    font-size: 12px;
+    color: alpha(@window_fg_color, 0.7);
+    line-height: 1.4;
+}
+
+.message-time {
+    font-size: 11px;
+    color: alpha(@window_fg_color, 0.6);
+    text-align: right;
+}
+
+/* Message View */
+.message-view {
+    background-color: @window_bg_color;
+    padding: 20px;
+}
+
+.message-header {
+    border-bottom: 1px solid alpha(@window_fg_color, 0.1);
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+}
+
+.message-sender-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: @window_fg_color;
+    margin-bottom: 8px;
+}
+
+.message-subject-large {
+    font-size: 18px;
+    font-weight: 500;
+    color: @window_fg_color;
+    margin-bottom: 12px;
+}
+
+.message-metadata {
+    font-size: 12px;
+    color: alpha(@window_fg_color, 0.7);
+    margin-bottom: 8px;
+}
+
+.message-body {
+    font-size: 14px;
+    line-height: 1.6;
+    color: @window_fg_color;
+}
+
+/* Buttons */
+button.flat {
+    border-radius: 6px;
+    padding: 8px 12px;
+    transition: background-color 150ms ease;
+}
+
+button.flat:hover {
+    background-color: alpha(@window_fg_color, 0.1);
+}
+
+button.flat:active {
+    background-color: alpha(@window_fg_color, 0.2);
+}
+
+button.suggested-action {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+    border-radius: 6px;
+    padding: 8px 16px;
+}
+
+button.suggested-action:hover {
+    background-color: alpha(@accent_bg_color, 0.8);
+}
+
+/* Badges */
+.badge {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    min-width: 18px;
+    text-align: center;
+}
+
+.badge.unread {
+    background-color: @destructive_bg_color;
+    color: @destructive_fg_color;
+}
+
+/* Status Bar */
+.status-bar {
+    background-color: alpha(@window_bg_color, 0.95);
+    border-top: 1px solid alpha(@window_fg_color, 0.1);
+    padding: 8px 16px;
+}
+
+.status-text {
+    font-size: 11px;
+    color: alpha(@window_fg_color, 0.7);
+}
+
+/* Progress Bar */
+progressbar {
+    background-color: alpha(@window_fg_color, 0.2);
+    border-radius: 3px;
+}
+
+progressbar > trough > progress {
+    background-color: @accent_bg_color;
+    border-radius: 3px;
+}
+
+/* Search Bar */
+.search-bar {
+    background-color: alpha(@window_bg_color, 0.95);
+    border-bottom: 1px solid alpha(@window_fg_color, 0.1);
+    padding: 8px 16px;
+}
+
+.search-entry {
+    border-radius: 20px;
+    padding: 8px 16px;
+    border: 1px solid alpha(@window_fg_color, 0.2);
+    background-color: @window_bg_color;
+}
+
+.search-entry:focus {
+    border-color: @accent_bg_color;
+    box-shadow: 0 0 0 2px alpha(@accent_bg_color, 0.3);
+}
+
+/* Avatar */
+.avatar {
+    border-radius: 50%;
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar36 {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+}
+
+.avatar48 {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+}
+
+/* Message Card */
+.msg-card {
+    background-color: @window_bg_color;
+    border: 1px solid alpha(@window_fg_color, 0.1);
+    border-radius: 8px;
+    margin: 8px 0;
+    overflow: hidden;
+    transition: box-shadow 150ms ease;
+}
+
+.msg-card:hover {
+    box-shadow: 0 2px 8px alpha(@window_fg_color, 0.1);
+}
+
+.msg-card.expanded {
+    box-shadow: 0 4px 16px alpha(@window_fg_color, 0.15);
+}
+
+.msg-header {
+    padding: 16px;
+    border-bottom: 1px solid alpha(@window_fg_color, 0.1);
+    cursor: pointer;
+}
+
+.msg-body {
+    padding: 16px;
+}
+
+.msg-body.collapsed {
+    max-height: 60px;
+}
+
+.msg-body.expanded {
+    max-height: none;
+}
+
+.card-sep {
+    margin: 0;
+    opacity: 0.5;
+}
+
+/* Thread indicators */
+.thread-indent {
+    margin-left: 20px;
+    border-left: 2px solid alpha(@window_fg_color, 0.2);
+    padding-left: 16px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .sidebar {
+        min-width: 200px;
+    }
+    
+    .message-view {
+        padding: 16px;
+    }
+}
+
+/* Dark theme adjustments */
+@media (prefers-color-scheme: dark) {
+    .msg-card {
+        border-color: alpha(@window_fg_color, 0.2);
+    }
+    
+    .msg-card:hover {
+        box-shadow: 0 2px 8px alpha(@window_fg_color, 0.2);
+    }
+}

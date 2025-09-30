@@ -1,0 +1,638 @@
+/* Asgard Mail - Apple Mail-inspired styling with libadwaita tokens */
+
+/* Ensure opaque surfaces across the app */
+window, .window, .background, .view, .viewer, .content, .pane, .sidebar, .message-list, .message-view {
+    background-color: @window_bg_color; /* libadwaita token */
+}
+
+/* Header Bar */
+headerbar {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Hide any separators used as spacers in the header */
+headerbar separator {
+    background: transparent !important;
+    border: 0 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Make header Paned handles invisible and non-draggable by removing hit area */
+.header-paned > separator {
+    background: transparent !important;
+    border: 0 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: default;
+}
+
+headerbar button.flat {
+    border-radius: 6px;
+    padding: 6px;
+    margin: 2px;
+}
+
+headerbar button.flat:hover {
+    background-color: alpha(@window_fg_color, 0.1);
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: @window_bg_color;
+    border-right: 1px solid alpha(@window_fg_color, 0.1);
+}
+
+.sidebar-section {
+    font-size: 11px;
+    letter-spacing: 0.6px;
+    color: alpha(@window_fg_color, 0.4);
+    margin: 8px 12px 4px;
+    text-transform: uppercase;
+}
+
+.sidebar-subsection {
+    font-size: 10px;
+    letter-spacing: 0.4px;
+    color: alpha(@window_fg_color, 0.3);
+    margin: 4px 24px 2px;
+    text-transform: uppercase;
+}
+
+.expandable-arrow {
+    font-size: 10px;
+    color: alpha(@window_fg_color, 0.6);
+    margin-right: 4px;
+    margin-left: -4px; /* Stick out to the left */
+    min-width: 12px;
+}
+
+.mailbox-icon {
+    opacity: 0.7;
+    margin-right: 8px;
+}
+
+.listbox row:selected .mailbox-icon {
+    opacity: 1.0;
+}
+
+/* Message List */
+.message-list {
+    background-color: @window_bg_color;
+    border-right: 1px solid alpha(@window_fg_color, 0.1);
+}
+
+/* Message List Items - Three Tier Structure */
+.message-row {
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.message-row:selected,
+.message-row:focus {
+    background-color: alpha(@accent_bg_color, 0.12);
+}
+
+.message-row:hover {
+    background-color: alpha(@accent_bg_color, 0.06);
+}
+
+/* Remove vertical accent lines */
+.message-row::before {
+    content: none !important;
+}
+
+.message-row {
+    border-left: 0 !important;
+}
+
+.middle-accent-line, .left-rail, .accent-line {
+    background: transparent !important;
+    width: 0 !important;
+    border: 0 !important;
+}
+
+/* Aggressively remove any list row styling that might create vertical lines or arrows */
+list row, listbox row, .list-row {
+    border-left: none !important;
+    border-right: none !important;
+    outline: none !important;
+    background: transparent !important;
+}
+
+/* Remove any arrows that might be added by GTK theme */
+list row::before, listbox row::before, .list-row::before {
+    content: none !important;
+}
+
+list row::after, listbox row::after, .list-row::after {
+    content: none !important;
+}
+
+/* Specifically target rows with no-arrow class */
+.no-arrow::before, .no-arrow::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Expand symbol styling */
+.expand-symbol {
+    font-size: 12px;
+    color: alpha(@window_fg_color, 0.6);
+    margin-right: 0px;
+    min-width: 16px;
+    font-weight: bold;
+}
+
+list row:selected, listbox row:selected, .list-row:selected {
+    border-left: none !important;
+    border-right: none !important;
+    outline: none !important;
+}
+
+/* Badge area + icons */
+.badge-box {
+    min-width: 18px;
+    /* GTK doesn't support align-items, so we'll use margin-top to push badges to top */
+}
+
+/* Three-tier row styling */
+.row-sender {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.row-subject {
+    font-size: 13px;
+}
+
+.row-snippet {
+    font-size: 12px;
+    color: alpha(@window_fg_color, 0.6);
+}
+
+.row-date {
+    font-size: 12px;
+    color: alpha(@window_fg_color, 0.6);
+}
+
+.row-clip {
+    opacity: 0.6;
+    margin-top: 2px;
+}
+
+.state-strong {
+    opacity: 0.9;
+}
+
+.semibold {
+    font-weight: 600;
+}
+
+/* Count Badges */
+.count-badge {
+    padding: 0 6px;
+    min-height: 16px;
+    border-radius: 8px;
+    background: @accent_bg_color;
+    color: @accent_fg_color;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.unread-dot {
+    color: @accent_bg_color;
+    font-size: 32px;
+}
+
+/* Recipient display styling */
+.hdr-recipients {
+    font-size: 12px;
+    color: alpha(@theme_fg_color, 0.7);
+}
+
+/* Make only the "To:" and "Cc:" labels bold */
+.recipient-label-bold {
+    font-weight: bold;
+}
+
+/* Recipient text should be normal weight */
+.recipient-text {
+    font-weight: normal;
+}
+
+/* Attachment icon */
+.attachment-icon {
+    color: alpha(@theme_fg_color, 0.6);
+    margin-top: 2px;
+}
+
+.right_content {
+    text-align: right;
+}
+
+.right_content > * {
+    text-align: right;
+}
+
+/* Fixed height rows to maintain layout structure */
+.fixed-row-height {
+    min-height: 20px;
+    max-height: 20px;
+}
+
+/* Ensure all right content rows have consistent height */
+.right_content > * {
+    min-height: 20px;
+    max-height: 20px;
+}
+
+/* Details link */
+.details-link {
+    color: @accent_bg_color;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: right;
+}
+
+.details-link:hover {
+    color: @accent_bg_color;
+    opacity: 0.8;
+}
+
+/* Message View */
+.message-view {
+    background-color: @window_bg_color;
+}
+
+/* Meta Bar */
+.meta-bar {
+    padding: 6px 12px;
+    border-bottom: 1px solid alpha(@window_fg_color, 0.08);
+    background-color: @window_bg_color;
+}
+
+.meta-count {
+    font-size: 12px;
+    color: alpha(@window_fg_color, 0.6);
+}
+
+/* Flag Menu Styles */
+.flag-list row {
+    padding: 6px 10px;
+}
+
+.flag-swatch-none {
+    background: transparent;
+    border: 1px solid alpha(@window_fg_color, 0.3);
+    border-radius: 6px;
+}
+
+.flag-swatch-red {
+    background: #ee5d5d;
+    border-radius: 6px;
+}
+
+.flag-swatch-orange {
+    background: #f29d49;
+    border-radius: 6px;
+}
+
+.flag-swatch-yellow {
+    background: #f2d24b;
+    border-radius: 6px;
+}
+
+.flag-swatch-green {
+    background: #61c167;
+    border-radius: 6px;
+}
+
+.flag-swatch-blue {
+    background: #4fa3ff;
+    border-radius: 6px;
+}
+
+.flag-swatch-purple {
+    background: #b17aff;
+    border-radius: 6px;
+}
+
+/* Message Header */
+.message-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid alpha(@window_fg_color, 0.08);
+    background-color: @window_bg_color;
+}
+
+.avatar {
+    min-width: 28px;
+    min-height: 28px;
+    border-radius: 14px;
+    background-color: @accent_bg_color;
+}
+
+.header-subject {
+    font-weight: 700;
+    font-size: 14px;
+    color: @window_fg_color;
+}
+
+.header-from {
+    font-weight: 600;
+    font-size: 13px;
+    color: @window_fg_color;
+}
+
+.header-email {
+    font-size: 12px;
+    color: alpha(@window_fg_color, 0.6);
+}
+
+.header-date {
+    font-size: 12px;
+    color: alpha(@window_fg_color, 0.6);
+}
+
+.recipient-chip {
+    border-radius: 6px;
+    padding: 2px 6px;
+    background: alpha(@window_fg_color, 0.08);
+    margin: 2px;
+    font-size: 11px;
+    color: alpha(@window_fg_color, 0.7);
+}
+
+.action-row {
+    margin-top: 8px;
+}
+
+.action-row button {
+    padding: 4px 6px;
+}
+
+/* Category Chips */
+.category-chips {
+    margin-bottom: 8px;
+}
+
+.pill {
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.pill:checked {
+    background: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+.pill:not(:checked) {
+    background: alpha(@window_fg_color, 0.06);
+    color: alpha(@window_fg_color, 0.7);
+}
+
+.pill:hover {
+    background: alpha(@accent_bg_color, 0.2);
+}
+
+.pill:not(:checked):hover {
+    background: alpha(@window_fg_color, 0.12);
+}
+
+/* Trim excessive bottom padding */
+.viewer {
+    padding: 0 36px 16px 36px;
+}
+
+/* Font consistency */
+window, .window, .background, .view, .viewer, .content, .pane, .sidebar, .message-list, .message-view {
+    font-family: Cantarell, sans-serif;
+    font-size: 13px;
+}
+
+/* Hover states */
+.listbox row:hover {
+    background-color: alpha(@accent_bg_color, 0.06);
+}
+
+.listbox row:selected {
+    background-color: alpha(@accent_bg_color, 0.12);
+}
+
+/* Message list hover */
+.message-row:hover {
+    background-color: alpha(@accent_bg_color, 0.06);
+}
+
+.message-row:selected {
+    background-color: alpha(@accent_bg_color, 0.12);
+}
+
+/* Thread styling */
+.thread-header {
+    font-weight: 600;
+}
+
+.thread-subject {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.thread-count {
+    font-size: 11px;
+    color: alpha(@window_fg_color, 0.6);
+    background: alpha(@window_fg_color, 0.1);
+    border-radius: 10px;
+    padding: 2px 6px;
+}
+
+.thread-time {
+    font-size: 12px;
+    color: alpha(@window_fg_color, 0.6);
+}
+
+.thread-arrow {
+    opacity: 0.6;
+}
+
+.sub-message {
+    background: alpha(@window_fg_color, 0.02);
+}
+
+.sub-sender {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.sub-preview {
+    font-size: 11px;
+    color: alpha(@window_fg_color, 0.7);
+}
+
+.sub-time {
+    font-size: 11px;
+    color: alpha(@window_fg_color, 0.5);
+}
+
+.reply-arrow {
+    opacity: 0.5;
+}
+
+/* Message Cards */
+.msg-card {
+    border: 1px solid alpha(@window_fg_color, 0.12);
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px 12px;
+    background: @window_bg_color;
+}
+
+.msg-card:focus-within {
+    outline: 2px solid alpha(@accent_bg_color, 0.4);
+    outline-offset: 2px;
+}
+
+.msg-card:hover {
+    background-color: alpha(@theme_bg_color, 0.05);
+    border-color: alpha(@theme_fg_color, 0.2);
+}
+
+.card-sep {
+    margin: 6px 0;
+}
+
+.avatar36 {
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.hdr-name {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.hdr-subject {
+    font-size: 13px;
+}
+
+.hdr-to {
+    font-size: 12px;
+    color: alpha(@window_fg_color, 0.6);
+}
+
+.hdr-when {
+    font-size: 12px;
+    color: alpha(@window_fg_color, 0.6);
+}
+
+.hdr-chevron {
+    font-size: 10px;
+    color: alpha(@window_fg_color, 0.5);
+    min-width: 16px;
+    margin-left: 4px;
+}
+
+.msg-body {
+    padding: 4px 0 0 0;
+}
+
+.msg-collapsed-preview {
+    padding: 4px 8px;
+    font-size: 12px;
+    color: alpha(@theme_fg_color, 0.6);
+    background-color: alpha(@theme_bg_color, 0.1);
+    border-radius: 4px;
+    margin: 2px 0;
+    min-height: 20px;
+    max-height: 20px;
+    overflow: hidden;
+    font-style: italic;
+}
+
+.msg-collapsed-chevron {
+    font-size: 10px;
+    color: alpha(@theme_fg_color, 0.5);
+    min-width: 12px;
+}
+
+.msg-collapsed-text {
+    font-size: 12px;
+    color: alpha(@theme_fg_color, 0.6);
+    font-style: italic;
+}
+
+/* Collapsed state - show only first line, muted styling */
+.msg-body.collapsed {
+    min-height: 12px;
+    max-height: 12px; /* Strict single line height in pixels */
+    color: alpha(@theme_fg_color, 0.5);
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.0;
+    transition: max-height 0.3s ease, color 0.3s ease;
+}
+
+/* Expanded state - show full content, normal styling */
+.msg-body.expanded {
+    min-height: 0;
+    max-height: none; /* Allow full height */
+    color: @theme_fg_color;
+    font-style: normal;
+    font-size: 14px;
+    transition: max-height 0.3s ease, color 0.3s ease;
+}
+
+.title-2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: @window_fg_color;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.dim-label {
+    font-size: 13px;
+    color: alpha(@window_fg_color, 0.6);
+    margin-bottom: 4px;
+}
+
+.message-content {
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Separators */
+.separator-hairline {
+    min-height: 1px;
+    background: alpha(@window_fg_color, 0.08);
+}
+
+/* Paned widget styling for resizable panels */
+paned {
+    background: @window_bg_color;
+}
+
+paned separator {
+    background: alpha(@window_fg_color, 0.1);
+    border: none;
+    min-width: 1px;
+    min-height: 1px;
+}
+
+paned separator:hover {
+    background: alpha(@accent_bg_color, 0.3);
+}
+
+
+/* Dark mode support is automatic with libadwaita tokens */

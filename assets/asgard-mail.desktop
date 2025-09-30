@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Asgard Mail
+Comment=A modern email client for GNOME
+Exec=asgard-mail
+Icon=asgard-mail
+Terminal=false
+Categories=Network;Email;
+Keywords=email;mail;client;gnome;
+StartupNotify=true
+StartupWMClass=asgard-mail
+MimeType=x-scheme-handler/mailto;

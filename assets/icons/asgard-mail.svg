@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#grad1)" stroke="#2C5F8A" stroke-width="2"/>
+  
+  <!-- Mail envelope -->
+  <path d="M20 25 L32 35 L44 25 L44 45 L20 45 Z" fill="white" stroke="#2C5F8A" stroke-width="1"/>
+  
+  <!-- Mail flap -->
+  <path d="M20 25 L32 35 L44 25" fill="none" stroke="#2C5F8A" stroke-width="2"/>
+  
+  <!-- Asgard "A" -->
+  <path d="M28 30 L32 38 L36 30" fill="#2C5F8A" stroke="#2C5F8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
